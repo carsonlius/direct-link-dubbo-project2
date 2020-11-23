@@ -8,13 +8,12 @@
     <dubbo:application name="dubbo-consumer-20201119"  />
 
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
-    <!--    <dubbo:registry address="multicast://224.5.6.7:1234" />-->
+        <dubbo:registry address="zookeeper://localhost:2182" />
 
     <!--     直连-->
-    <dubbo:registry address="N/A" />
+<!--    <dubbo:registry address="N/A" />-->
 
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService 本地直链 -->
     <dubbo:reference id="userService"
-                     interface="com.carsonlius.dubbo.service.UserService"
-                     url="dubbo://localhost:20880" />
+                     interface="com.carsonlius.dubbo.service.UserService"/>
 </beans>
